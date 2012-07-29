@@ -52,13 +52,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\cocos2dx\platform;..\..\cocos2dx\include;..\..\cocos2dx;..\..\cocos2dx\platform\third_party\win32\OGLES;..\Classes\main;..\Classes\game;..\Classes\game\layer;..\Classes\game\sprite;..\Classes\kit;..\Classes\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\cocos2dx\platform;..\..\cocos2dx\include;..\..\cocos2dx;..\..\cocos2dx\platform\third_party\win32\OGLES;..\..\CocosDenshion\include;..\Classes\main;..\Classes\game;..\Classes\game\layer;..\Classes\game\sprite;..\Classes\kit;..\Classes\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\$(Configuration).win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcocos2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcocos2d.lib;libgles_cm.lib;libBox2d.lib;libchipmunk.lib;libcurl_imp.lib;libCocosDenshion.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
