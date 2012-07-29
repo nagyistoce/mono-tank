@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\cocos2dx\platform;..\..\cocos2dx\include;..\..\cocos2dx;..\..\cocos2dx\platform\third_party\win32\OGLES;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\cocos2dx\platform;..\..\cocos2dx\include;..\..\cocos2dx;..\..\cocos2dx\platform\third_party\win32\OGLES;..\Classes\main;..\Classes\game;..\Classes\game\layer;..\Classes\game\sprite;..\Classes\kit;..\Classes\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -88,6 +88,7 @@
     <ClCompile Include="..\Classes\game\layer\layer_game_touch.cpp" />
     <ClCompile Include="..\Classes\game\scene_game.cpp" />
     <ClCompile Include="..\Classes\game\sprite\sprite_dlg_mission_start.cpp" />
+    <ClCompile Include="..\Classes\game\sprite\sprite_tank.cpp" />
     <ClCompile Include="..\Classes\kit\layer_dialog.cpp" />
     <ClCompile Include="..\Classes\kit\sprite_dialog.cpp" />
     <ClCompile Include="..\Classes\main\AppDelegate.cpp" />
@@ -103,9 +104,11 @@
     <ClInclude Include="..\Classes\game\layer\layer_game_touch.h" />
     <ClInclude Include="..\Classes\game\scene_game.h" />
     <ClInclude Include="..\Classes\game\sprite\sprite_dlg_mission_start.h" />
+    <ClInclude Include="..\Classes\game\sprite\sprite_tank.h" />
     <ClInclude Include="..\Classes\kit\layer_dialog.h" />
     <ClInclude Include="..\Classes\kit\sprite_dialog.h" />
     <ClInclude Include="..\Classes\main\AppDelegate.h" />
+    <ClInclude Include="..\Classes\main\graphic.h" />
     <ClInclude Include="..\Classes\main\handle.h" />
     <ClInclude Include="..\Classes\main\head.h" />
     <ClInclude Include="..\Classes\tool\tool.h" />
