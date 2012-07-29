@@ -7,27 +7,111 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{713f4c3e-a304-4045-a3fa-43e90f9a0be6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\tool">
+      <UniqueIdentifier>{b6745744-cf5c-4d4d-b731-1ebae48109db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\main">
+      <UniqueIdentifier>{01999397-a2b6-4425-a18b-fca42f11831a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\kit">
+      <UniqueIdentifier>{4e9fb5ef-b7cb-432e-9d77-3d9400710b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\game">
+      <UniqueIdentifier>{0cb7a718-0b46-4a03-8aa2-8900bf99a96b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\game\layer">
+      <UniqueIdentifier>{3095e537-8081-4a5f-a001-97bcbb5c025a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\game\sprite">
+      <UniqueIdentifier>{022fe674-158a-4e18-a7b8-27ba23fc7ee6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>Classes</Filter>
+    <ClCompile Include="..\Classes\tool\tool_geometry.cpp">
+      <Filter>Classes\tool</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>Classes</Filter>
+    <ClCompile Include="..\Classes\tool\tool_image.cpp">
+      <Filter>Classes\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\main\AppDelegate.cpp">
+      <Filter>Classes\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\main\handle.cpp">
+      <Filter>Classes\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\kit\layer_dialog.cpp">
+      <Filter>Classes\kit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\kit\sprite_dialog.cpp">
+      <Filter>Classes\kit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\scene_game.cpp">
+      <Filter>Classes\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\layer\layer_game_control.cpp">
+      <Filter>Classes\game\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\layer\layer_game_map.cpp">
+      <Filter>Classes\game\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\layer\layer_game_object.cpp">
+      <Filter>Classes\game\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\layer\layer_game_touch.cpp">
+      <Filter>Classes\game\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\sprite\sprite_dlg_mission_start.cpp">
+      <Filter>Classes\game\sprite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\Classes\tool\tool.h">
+      <Filter>Classes\tool</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\Classes\tool\tool_image.h">
+      <Filter>Classes\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\tool_geometry.h">
+      <Filter>Classes\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\head.h">
+      <Filter>Classes\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\AppDelegate.h">
+      <Filter>Classes\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\handle.h">
+      <Filter>Classes\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\kit\sprite_dialog.h">
+      <Filter>Classes\kit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\kit\layer_dialog.h">
+      <Filter>Classes\kit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\scene_game.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\layer\layer_game_touch.h">
+      <Filter>Classes\game\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\layer\layer_game_control.h">
+      <Filter>Classes\game\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\layer\layer_game_map.h">
+      <Filter>Classes\game\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\layer\layer_game_object.h">
+      <Filter>Classes\game\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\sprite\sprite_dlg_mission_start.h">
+      <Filter>Classes\game\sprite</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
