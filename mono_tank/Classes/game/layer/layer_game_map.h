@@ -9,11 +9,12 @@ public:
 
 public:
 	CLayerGameMap();
-	~CLayerGameMap();
+	virtual ~CLayerGameMap();
 
 	static CLayerGameMap *instance();
 
 	bool initLayerGameMap();
+	virtual void draw();
 };
 
 #endif

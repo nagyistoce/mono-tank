@@ -39,14 +39,6 @@ bool CLayerGameObject::initLayerGameObject()
 		dialog = CSpriteDlgMissionStart::instance();
 		g_SceneGame->m_layerDialog->runDialog(dialog);
 
-		m_player = new CSpritePlayer;
-		m_player->initSpritePlayer();
-		addChild(m_player);
-		m_player->release();
-		m_player->setPositionInPixels(cocos2d::CCPointMake(g_ScrrenCenter.x, 50.0f));
-		m_player->setRotation(30.0f);
-		//m_player->setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
-
 		return true;
 	}
 	else

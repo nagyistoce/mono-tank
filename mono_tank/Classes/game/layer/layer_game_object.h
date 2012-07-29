@@ -2,12 +2,10 @@
 #define layer_game_object_h
 
 #include "head.h"
-#include "sprite_player.h"
 
 class CLayerGameObject : public cocos2d::CCLayer
 {
 public:
-	CSpritePlayer *m_player;
 
 public:
 	CLayerGameObject();

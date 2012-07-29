@@ -6,8 +6,6 @@
 class CLayerGameControl : public cocos2d::CCLayer
 {
 public:
-	cocos2d::CCMenu *m_menu;
-	cocos2d::CCMenuItemSprite *m_itemRight;
 
 public:
 	CLayerGameControl();
@@ -16,10 +14,7 @@ public:
 	static CLayerGameControl *instance();
 
 	bool initLayerGameControl();
-
 	virtual void draw();
-
-	void callBackItemRight(CCObject *Object);
 };
 
 #endif
