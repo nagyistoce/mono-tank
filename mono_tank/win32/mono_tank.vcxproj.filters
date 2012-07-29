@@ -66,6 +66,9 @@
     <ClCompile Include="..\Classes\game\sprite\sprite_dlg_mission_start.cpp">
       <Filter>Classes\game\sprite</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\game\sprite\sprite_tank.cpp">
+      <Filter>Classes\game\sprite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -111,6 +114,12 @@
       <Filter>Classes\game\layer</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\game\sprite\sprite_dlg_mission_start.h">
+      <Filter>Classes\game\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\graphic.h">
+      <Filter>Classes\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\sprite\sprite_tank.h">
       <Filter>Classes\game\sprite</Filter>
     </ClInclude>
   </ItemGroup>
