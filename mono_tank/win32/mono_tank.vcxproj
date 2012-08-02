@@ -115,6 +115,7 @@
     <ClInclude Include="..\Classes\tool\tool.h" />
     <ClInclude Include="..\Classes\tool\tool_geometry.h" />
     <ClInclude Include="..\Classes\tool\tool_image.h" />
+    <ClInclude Include="game_define.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
