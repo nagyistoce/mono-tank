@@ -122,5 +122,8 @@
     <ClInclude Include="..\Classes\game\sprite\sprite_tank.h">
       <Filter>Classes\game\sprite</Filter>
     </ClInclude>
+    <ClInclude Include="game_define.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
