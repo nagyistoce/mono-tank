@@ -11,7 +11,7 @@ public:
 	CLayerGameControl();
 	virtual ~CLayerGameControl();
 
-	static CLayerGameControl *instance();
+	static CLayerGameControl *create();
 
 	bool initLayerGameControl();
 	virtual void draw();

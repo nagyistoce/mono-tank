@@ -21,7 +21,7 @@ public:
 	CSceneGame();
 	~CSceneGame();
 
-	static CSceneGame *instance();
+	static CSceneGame *create();
 
 	bool initSceneGame();
 };

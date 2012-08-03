@@ -13,7 +13,7 @@ public:
 	CSpriteDlgMissionStart();
 	virtual ~CSpriteDlgMissionStart();
 
-	static CSpriteDlgMissionStart *instance();
+	static CSpriteDlgMissionStart *create();
 
 	virtual bool initSpriteGameDlgMissionStart();
 };

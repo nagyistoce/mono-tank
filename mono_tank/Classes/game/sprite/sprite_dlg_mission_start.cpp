@@ -10,7 +10,7 @@ CSpriteDlgMissionStart::~CSpriteDlgMissionStart()
 
 }
 
-CSpriteDlgMissionStart *CSpriteDlgMissionStart::instance()
+CSpriteDlgMissionStart *CSpriteDlgMissionStart::create()
 {
 	CSpriteDlgMissionStart *instance;
 

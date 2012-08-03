@@ -8,7 +8,7 @@ CLayerGameMap::~CLayerGameMap()
 {
 }
 
-CLayerGameMap *CLayerGameMap::instance()
+CLayerGameMap *CLayerGameMap::create()
 {
 	CLayerGameMap *instance;
 

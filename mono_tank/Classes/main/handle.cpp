@@ -14,7 +14,7 @@ void AppSetup()
 	g_ScrrenSize = cocos2d::CCDirector::sharedDirector()->getWinSizeInPixels();
 	g_ScrrenCenter = cocos2d::CCPointMake(g_ScrrenSize.width / 2.0f, g_ScrrenSize.height / 2.0f);
 
-	sceneGame = CSceneGame::instance();
+	sceneGame = CSceneGame::create();
 	cocos2d::CCDirector::sharedDirector()->runWithScene(sceneGame);
 	sceneGame->release();
 }

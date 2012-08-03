@@ -3,13 +3,13 @@
 
 #include "head.h"
 
-class CSpriteTank : cocos2d::CCSprite
+class CSpriteTank : public cocos2d::CCSprite
 {
 public:
 	CSpriteTank();
 	virtual ~CSpriteTank();
 
-	static CSpriteTank *instance();
+	static CSpriteTank *create();
 
 	bool initSpriteTank();
 	virtual void draw();

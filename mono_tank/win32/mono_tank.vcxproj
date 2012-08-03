@@ -88,6 +88,7 @@
     <ClCompile Include="..\Classes\game\layer\layer_game_object.cpp" />
     <ClCompile Include="..\Classes\game\layer\layer_game_touch.cpp" />
     <ClCompile Include="..\Classes\game\scene_game.cpp" />
+    <ClCompile Include="..\Classes\game\sprite\sprite_bullet.cpp" />
     <ClCompile Include="..\Classes\game\sprite\sprite_dlg_mission_start.cpp" />
     <ClCompile Include="..\Classes\game\sprite\sprite_tank.cpp" />
     <ClCompile Include="..\Classes\kit\layer_dialog.cpp" />
@@ -104,6 +105,7 @@
     <ClInclude Include="..\Classes\game\layer\layer_game_object.h" />
     <ClInclude Include="..\Classes\game\layer\layer_game_touch.h" />
     <ClInclude Include="..\Classes\game\scene_game.h" />
+    <ClInclude Include="..\Classes\game\sprite\sprite_bullet.h" />
     <ClInclude Include="..\Classes\game\sprite\sprite_dlg_mission_start.h" />
     <ClInclude Include="..\Classes\game\sprite\sprite_tank.h" />
     <ClInclude Include="..\Classes\kit\layer_dialog.h" />

@@ -14,7 +14,7 @@ public:
 	CLayerDialog();
 	~CLayerDialog();
 
-	static CLayerDialog *instance();
+	static CLayerDialog *create();
 
 	bool initLayerDialog();
 
