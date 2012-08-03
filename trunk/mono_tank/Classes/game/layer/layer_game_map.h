@@ -11,7 +11,7 @@ public:
 	CLayerGameMap();
 	virtual ~CLayerGameMap();
 
-	static CLayerGameMap *instance();
+	static CLayerGameMap *create();
 
 	bool initLayerGameMap();
 	virtual void draw();

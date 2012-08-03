@@ -14,7 +14,7 @@ CLayerGameTouch::~CLayerGameTouch()
 
 }
 
-CLayerGameTouch *CLayerGameTouch::instance()
+CLayerGameTouch *CLayerGameTouch::create()
 {
 	CLayerGameTouch *instance;
 

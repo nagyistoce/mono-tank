@@ -10,7 +10,7 @@ CLayerDialog::~CLayerDialog()
 {
 }
 
-CLayerDialog *CLayerDialog::instance()
+CLayerDialog *CLayerDialog::create()
 {
 	CLayerDialog *instance;
 

@@ -10,7 +10,7 @@ CLayerGameControl::~CLayerGameControl()
 
 }
 
-CLayerGameControl *CLayerGameControl::instance()
+CLayerGameControl *CLayerGameControl::create()
 {
 	CLayerGameControl *instance;
 

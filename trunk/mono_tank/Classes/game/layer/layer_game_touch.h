@@ -9,7 +9,7 @@ public:
 	CLayerGameTouch();
 	virtual ~CLayerGameTouch();
 
-	static CLayerGameTouch *instance();
+	static CLayerGameTouch *create();
 
 	virtual bool initLayerGameTouch();
 	virtual void registerWithTouchDispatcher();

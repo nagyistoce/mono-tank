@@ -3,15 +3,20 @@
 
 #include "head.h"
 
+class CSpriteTank;
+class CSpriteBullet;
+
 class CLayerGameObject : public cocos2d::CCLayer
 {
 public:
+	CSpriteTank *m_tank;
+	CSpriteBullet *m_bullet;
 
 public:
 	CLayerGameObject();
 	~CLayerGameObject();
 
-	static CLayerGameObject *instance();
+	static CLayerGameObject *create();
 
 	bool initLayerGameObject();
 

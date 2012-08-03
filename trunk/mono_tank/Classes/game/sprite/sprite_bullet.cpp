@@ -1,38 +1,37 @@
-#include "sprite_tank.h"
+#include "sprite_bullet.h"
 
 #include "graphic.h"
 
-CSpriteTank::CSpriteTank()
+CSpriteBullet::CSpriteBullet()
 {
 
 }
 
-CSpriteTank::~CSpriteTank()
+CSpriteBullet::~CSpriteBullet()
 {
 
 }
 
-CSpriteTank *CSpriteTank::create()
+CSpriteBullet *CSpriteBullet::create()
 {
-	CSpriteTank *instance;
+	CSpriteBullet *instance;
 
-	instance = new CSpriteTank;
-	if (instance->initSpriteTank())
+	instance = new CSpriteBullet;
+	if (instance->initSpriteBullet())
 	{
 		return instance;
 	}
 	else
 	{
+		instance->release();
 		return NULL;
 	}
 }
 
-bool CSpriteTank::initSpriteTank()
+bool CSpriteBullet::initSpriteBullet()
 {
 	if (cocos2d::CCSprite::init())
 	{
-		setColor(cocos2d::ccYELLOW);
-		setOpacity(255);
 		return true;
 	}
 	else
@@ -41,7 +40,7 @@ bool CSpriteTank::initSpriteTank()
 	}
 }
 
-void CSpriteTank::draw()
+void CSpriteBullet::draw()
 {
 	glDisable(GL_COLOR_ARRAY);
 	glDisable(GL_TEXTURE_COORD_ARRAY);
@@ -49,8 +48,8 @@ void CSpriteTank::draw()
 
 	glLineWidth(1.5f);
 	glColor4ub(getColor().r, getColor().g, getColor().b, getOpacity());
-	glVertexPointer(2, GL_FLOAT, 0, g_GpTankVex);
-	glDrawElements(GL_LINES, sizeof(g_GpTankInx), GL_UNSIGNED_BYTE, g_GpTankInx);
+	glVertexPointer(2, GL_FLOAT, 0, g_GpBulletVex);
+	glDrawElements(GL_LINES, sizeof(g_GpBulletInx), GL_UNSIGNED_BYTE, g_GpBulletInx);
 
 	glEnable(GL_COLOR_ARRAY);
 	glEnable(GL_TEXTURE_COORD_ARRAY);
