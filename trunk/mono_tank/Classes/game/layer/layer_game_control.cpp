@@ -17,6 +17,7 @@ CLayerGameControl *CLayerGameControl::create()
 	instance = new CLayerGameControl();
 	if (instance->initLayerGameControl())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else

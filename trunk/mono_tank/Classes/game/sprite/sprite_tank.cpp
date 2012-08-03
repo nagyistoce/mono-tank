@@ -19,10 +19,12 @@ CSpriteTank *CSpriteTank::create()
 	instance = new CSpriteTank;
 	if (instance->initSpriteTank())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else
 	{
+		instance->release();
 		return NULL;
 	}
 }

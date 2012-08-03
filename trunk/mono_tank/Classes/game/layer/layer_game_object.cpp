@@ -23,6 +23,7 @@ CLayerGameObject *CLayerGameObject::create()
 	instance = new CLayerGameObject;
 	if (instance->initLayerGameObject())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else

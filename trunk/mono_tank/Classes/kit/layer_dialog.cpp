@@ -17,6 +17,7 @@ CLayerDialog *CLayerDialog::create()
 	instance = new CLayerDialog;
 	if (instance->initLayerDialog())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else

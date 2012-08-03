@@ -19,6 +19,7 @@ CSpriteBullet *CSpriteBullet::create()
 	instance = new CSpriteBullet;
 	if (instance->initSpriteBullet())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else

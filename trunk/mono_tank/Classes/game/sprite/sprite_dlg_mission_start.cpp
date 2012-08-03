@@ -17,6 +17,7 @@ CSpriteDlgMissionStart *CSpriteDlgMissionStart::create()
 	instance = new CSpriteDlgMissionStart;
 	if (instance->initSpriteGameDlgMissionStart())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else
