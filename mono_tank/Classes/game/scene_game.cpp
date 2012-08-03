@@ -21,6 +21,7 @@ CSceneGame *CSceneGame::create()
 	instance = new CSceneGame;
 	if (instance->initSceneGame())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else
@@ -38,27 +39,22 @@ bool CSceneGame::initSceneGame()
 
 		m_layerControl = CLayerGameControl::create();
 		addChild(m_layerControl, SCENE_GAME_LAYER_CONTROL_Z);
-		m_layerControl->release();
 		m_layerControl->setPositionInPixels(cocos2d::CCPointZero);
 
 		m_layerTouch = CLayerGameTouch::create();
 		addChild(m_layerTouch, SCENE_GAME_LAYER_TOUCH_Z);
-		m_layerTouch->release();
 		m_layerTouch->setPositionInPixels(cocos2d::CCPointZero);
 
 		m_layerDialog = CLayerDialog::create();
 		addChild(m_layerDialog, SCENE_GAME_LAYER_DIALOG_Z);
-		m_layerDialog->release();
 		m_layerDialog->setPositionInPixels(g_ScrrenCenter.x, g_ScrrenCenter.y);
 
 		m_layerObject = CLayerGameObject::create();
 		addChild(m_layerObject, SCENE_GAME_LAYER_OBJECT_Z);
-		m_layerObject->release();
 		m_layerObject->setPositionInPixels(cocos2d::CCPointZero);
 
 		m_layerMap = CLayerGameMap::create();
 		addChild(m_layerMap, SCENE_GAME_LAYER_MAP_Z);
-		m_layerMap->release();
 		m_layerMap->setPositionInPixels(cocos2d::CCPointZero);
 
 		return true;

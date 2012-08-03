@@ -16,5 +16,4 @@ void AppSetup()
 
 	sceneGame = CSceneGame::create();
 	cocos2d::CCDirector::sharedDirector()->runWithScene(sceneGame);
-	sceneGame->release();
 }

@@ -15,6 +15,7 @@ CLayerGameMap *CLayerGameMap::create()
 	instance = new CLayerGameMap;
 	if (instance->initLayerGameMap())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else

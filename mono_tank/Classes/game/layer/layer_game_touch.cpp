@@ -21,6 +21,7 @@ CLayerGameTouch *CLayerGameTouch::create()
 	instance = new CLayerGameTouch();
 	if (instance->initLayerGameTouch())
 	{
+		instance->autorelease();
 		return instance;
 	}
 	else
