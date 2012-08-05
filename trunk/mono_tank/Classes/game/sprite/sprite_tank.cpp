@@ -45,6 +45,7 @@ bool CSpriteTank::initSpriteTank()
 
 void CSpriteTank::draw()
 {
+	return;
 	glDisable(GL_COLOR_ARRAY);
 	glDisable(GL_TEXTURE_COORD_ARRAY);
 	glDisable(GL_TEXTURE_2D);

@@ -83,11 +83,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\game\game_controller.cpp" />
+    <ClCompile Include="..\Classes\game\game_logic.cpp" />
+    <ClCompile Include="..\Classes\game\game_view.cpp" />
     <ClCompile Include="..\Classes\game\layer\layer_game_control.cpp" />
     <ClCompile Include="..\Classes\game\layer\layer_game_map.cpp" />
     <ClCompile Include="..\Classes\game\layer\layer_game_object.cpp" />
     <ClCompile Include="..\Classes\game\layer\layer_game_touch.cpp" />
     <ClCompile Include="..\Classes\game\scene_game.cpp" />
+    <ClCompile Include="..\Classes\game\scene_menu.cpp" />
     <ClCompile Include="..\Classes\game\sprite\sprite_bullet.cpp" />
     <ClCompile Include="..\Classes\game\sprite\sprite_dlg_mission_start.cpp" />
     <ClCompile Include="..\Classes\game\sprite\sprite_tank.cpp" />
@@ -100,11 +104,16 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\game\game_controller.h" />
+    <ClInclude Include="..\Classes\game\game_define.h" />
+    <ClInclude Include="..\Classes\game\game_logic.h" />
+    <ClInclude Include="..\Classes\game\game_view.h" />
     <ClInclude Include="..\Classes\game\layer\layer_game_control.h" />
     <ClInclude Include="..\Classes\game\layer\layer_game_map.h" />
     <ClInclude Include="..\Classes\game\layer\layer_game_object.h" />
     <ClInclude Include="..\Classes\game\layer\layer_game_touch.h" />
     <ClInclude Include="..\Classes\game\scene_game.h" />
+    <ClInclude Include="..\Classes\game\scene_menu.h" />
     <ClInclude Include="..\Classes\game\sprite\sprite_bullet.h" />
     <ClInclude Include="..\Classes\game\sprite\sprite_dlg_mission_start.h" />
     <ClInclude Include="..\Classes\game\sprite\sprite_tank.h" />
@@ -117,7 +126,6 @@
     <ClInclude Include="..\Classes\tool\tool.h" />
     <ClInclude Include="..\Classes\tool\tool_geometry.h" />
     <ClInclude Include="..\Classes\tool\tool_image.h" />
-    <ClInclude Include="game_define.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
