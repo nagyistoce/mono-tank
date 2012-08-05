@@ -7,6 +7,7 @@ using namespace CocosDenshion;
 #include "CCEGLView.h"
 
 #include "head.h"
+#include "game_define.h"
 
 USING_NS_CC;
 
@@ -30,7 +31,7 @@ bool AppDelegate::initInstance()
 		// The HelloWorld is designed as HVGA.
 		CCEGLView * pMainWnd = new CCEGLView();
 		CC_BREAK_IF(! pMainWnd
-				|| ! pMainWnd->Create(TEXT("cocos2d: Hello World"), 320, 480));
+				|| ! pMainWnd->Create(TEXT("cocos2d: Hello World"), WINDOW_WIDTH, WINDOW_HEIGHT));
 
 #endif  // CC_PLATFORM_WIN32
 

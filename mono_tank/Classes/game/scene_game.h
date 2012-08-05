@@ -1,4 +1,4 @@
-#ifndef scene_game_h
+﻿#ifndef scene_game_h
 #define scene_game_h
 
 #include "head.h"
@@ -8,8 +8,27 @@
 #include "layer_game_touch.h"
 #include "layer_game_control.h"
 
-class CSceneGame : public cocos2d::CCScene
+#include "game_define.h"
+
+class CGameLogic;
+class CSceneGame : public cocos2d::CCLayer
 {
+
+public:
+	CSceneGame();
+	~CSceneGame();
+public:
+	
+	virtual void onEnter();
+	virtual void onExit();
+	
+public:
+	static CSceneGame *create(const CGameLogic* pGameLogic);
+	bool initSceneGame(const CGameLogic* pGameLogic);
+
+private:
+	void refresh(float dt);
+	
 public:
 	CLayerGameMap *m_layerMap;
 	CLayerGameObject *m_layerObject;
@@ -17,13 +36,8 @@ public:
 	CLayerGameTouch *m_layerTouch;
 	CLayerGameControl *m_layerControl;
 
-public:
-	CSceneGame();
-	~CSceneGame();
-
-	static CSceneGame *create();
-
-	bool initSceneGame();
+	const CGameLogic *m_pGameLogic;
+	cocos2d::CCLabelTTF*	m_labelScore;
 };
 
 #endif

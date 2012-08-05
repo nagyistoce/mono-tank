@@ -72,6 +72,18 @@
     <ClCompile Include="..\Classes\game\sprite\sprite_bullet.cpp">
       <Filter>Classes\game\sprite</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\game\game_controller.cpp">
+      <Filter>Classes\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\game_logic.cpp">
+      <Filter>Classes\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\game_view.cpp">
+      <Filter>Classes\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\scene_menu.cpp">
+      <Filter>Classes\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -125,11 +137,23 @@
     <ClInclude Include="..\Classes\game\sprite\sprite_tank.h">
       <Filter>Classes\game\sprite</Filter>
     </ClInclude>
-    <ClInclude Include="game_define.h">
-      <Filter>Classes\game</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\game\sprite\sprite_bullet.h">
       <Filter>Classes\game\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\game_controller.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\game_logic.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\game_define.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\game_view.h">
+      <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\scene_menu.h">
+      <Filter>Classes\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
