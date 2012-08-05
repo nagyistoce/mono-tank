@@ -4,7 +4,7 @@
 #define WINDOW_WIDTH	320
 #define WINDOW_HEIGHT	480
 
-#define GRID_VERTICAL	10
+#define GRID_VERTICAL	12
 #define GRID_HORIZON	20
 
 enum eMapValue

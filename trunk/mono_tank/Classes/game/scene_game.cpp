@@ -2,6 +2,7 @@
 
 #include "graphic.h"
 #include "game_logic.h"
+#include "game_controller.h"
 
 #define SCENE_GAME_LAYER_MAP_Z 0
 #define SCENE_GAME_LAYER_OBJECT_Z 1
@@ -89,25 +90,40 @@ void CSceneGame::RenderRect(cocos2d::CCPoint point, cocos2d::CCSize size,cocos2d
 
 void CSceneGame::onEnter()
 {
+	/*
 	m_layerControl = CLayerGameControl::create();
-		addChild(m_layerControl, SCENE_GAME_LAYER_CONTROL_Z);
-		m_layerControl->setPositionInPixels(cocos2d::CCPointZero);
+	addChild(m_layerControl, SCENE_GAME_LAYER_CONTROL_Z);
+	m_layerControl->setPositionInPixels(cocos2d::CCPointZero);
 
-		m_layerTouch = CLayerGameTouch::create();
-		addChild(m_layerTouch, SCENE_GAME_LAYER_TOUCH_Z);
-		m_layerTouch->setPositionInPixels(cocos2d::CCPointZero);
+	m_layerTouch = CLayerGameTouch::create();
+	addChild(m_layerTouch, SCENE_GAME_LAYER_TOUCH_Z);
+	m_layerTouch->setPositionInPixels(cocos2d::CCPointZero);
 
-		//m_layerDialog = CLayerDialog::create();
-		//addChild(m_layerDialog, SCENE_GAME_LAYER_DIALOG_Z);
-		//m_layerDialog->setPositionInPixels(g_ScrrenCenter.x, g_ScrrenCenter.y);
+	m_layerDialog = CLayerDialog::create();
+	addChild(m_layerDialog, SCENE_GAME_LAYER_DIALOG_Z);
+	m_layerDialog->setPositionInPixels(g_ScrrenCenter.x, g_ScrrenCenter.y);
 
-		//m_layerObject = CLayerGameObject::create();
-		//addChild(m_layerObject, SCENE_GAME_LAYER_OBJECT_Z);
-		//m_layerObject->setPositionInPixels(cocos2d::CCPointZero);
+	m_layerObject = CLayerGameObject::create();
+	addChild(m_layerObject, SCENE_GAME_LAYER_OBJECT_Z);
+	m_layerObject->setPositionInPixels(cocos2d::CCPointZero);
 
-		//m_layerMap = CLayerGameMap::create();
-		//addChild(m_layerMap, SCENE_GAME_LAYER_MAP_Z);
-		//m_layerMap->setPositionInPixels(cocos2d::CCPointZero);
+	m_layerMap = CLayerGameMap::create();
+	addChild(m_layerMap, SCENE_GAME_LAYER_MAP_Z);
+	m_layerMap->setPositionInPixels(cocos2d::CCPointZero);
+	*/
+
+	CCMenuItemImage* pBtnPause = CCMenuItemImage::itemFromNormalImage(
+									"CloseNormal.png",
+									"CloseSelected.png",
+									this,
+									menu_selector(CSceneGame::menuCallbackPause) );
+	pBtnPause->setAnchorPoint(ccp(1,1));
+
+	CCMenu* pMenu = CCMenu::menuWithItems(pBtnPause, NULL);
+	pMenu->setAnchorPoint(ccp(1,1));
+	pMenu->setPosition( ccp(WINDOW_WIDTH,WINDOW_HEIGHT) );
+	addChild(pMenu);
+
 
 	m_labelScore = CCLabelTTF::labelWithString("", "Arial", 24);
 	m_labelScore->setAnchorPoint(ccp(0,1));
@@ -115,12 +131,16 @@ void CSceneGame::onEnter()
 	addChild(m_labelScore,SCENE_GAME_LAYER_CONTROL_Z);
 
 	schedule(schedule_selector(CSceneGame::refresh));
+	
+	cocos2d::CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this,0,true);
+
 	CCLayer::onEnter();
 
 }
 
 void CSceneGame::onExit()
 {
+	cocos2d::CCTouchDispatcher::sharedDispatcher()->removeDelegate(this);
 	CCLayer::onExit();
 }
 
@@ -132,3 +152,53 @@ void CSceneGame::refresh(float dt)
 	
 	CCLayer::update(dt);
 }
+
+void CSceneGame::menuCallbackPause(cocos2d::CCObject* pSender)
+{
+	DISPATCH_EVENT(eEvent_Btn_PauseGame);
+}
+
+bool CSceneGame::ccTouchBegan(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Event)
+{
+	cocos2d::CCPoint point;
+
+	//point = getTouchPoint(Touch);
+	if( CGameLogic::eState_Pause==m_pGameLogic->getState())
+	{
+		DISPATCH_EVENT(eEvent_Btn_ResumeGame);
+	}
+
+	return true;
+}
+
+void CSceneGame::ccTouchMoved(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Event)
+{
+	cocos2d::CCPoint point;
+
+	//point = getTouchPoint(Touch);
+
+}
+
+void CSceneGame::ccTouchEnded(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Event)
+{
+	cocos2d::CCPoint point;
+
+	//point = getTouchPoint(Touch);
+
+}
+
+void CSceneGame::ccTouchCancelled(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Event)
+{
+	cocos2d::CCPoint point;
+
+	//point = getTouchPoint(Touch);
+}
+/*
+cocos2d::CCPoint CSceneGame::getTouchPoint(cocos2d::CCTouch *Touch)
+{
+	cocos2d::CCPoint point;
+
+	//point = convertTouchToNodeSpace(Touch);
+	return point;
+}
+*/

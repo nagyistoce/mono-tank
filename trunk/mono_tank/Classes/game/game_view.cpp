@@ -75,7 +75,7 @@ void CGameView::replaceWithLayer(cocos2d::CCLayer* pLayer)
 {
 	if( m_layerCurrent )
 	{
-		removeChild( m_layerCurrent,true );
+		removeChild( m_layerCurrent, true );
 	}
 	m_layerCurrent = pLayer;
 	addChild(m_layerCurrent);

@@ -8,7 +8,9 @@
 enum eEvent
 {
 	eEvent_Btn_begin = 0,
-	eEvent_Btn_StartGame = 0,
+	eEvent_Btn_StartGame,
+	eEvent_Btn_PauseGame,
+	eEvent_Btn_ResumeGame,
 	eEvent_Btn_end = 100,
 
 	eEvent_Num
