@@ -57,6 +57,7 @@ bool CLayerGameTouch::ccTouchBegan(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Ev
 	cocos2d::CCPoint point;
 
 	point = getTouchPoint(Touch);
+	/*
 	if (false == g_SceneGame->m_layerDialog->touchBegan(point))
 	{
 		goto RET_;
@@ -65,7 +66,7 @@ bool CLayerGameTouch::ccTouchBegan(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Ev
 	{
 		goto RET_;
 	}
-
+	*/
 RET_:
 	return true;
 }
@@ -75,6 +76,7 @@ void CLayerGameTouch::ccTouchMoved(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Ev
 	cocos2d::CCPoint point;
 
 	point = getTouchPoint(Touch);
+	/*
 	if (false == g_SceneGame->m_layerDialog->touchMoved(point))
 	{
 		return;
@@ -83,6 +85,7 @@ void CLayerGameTouch::ccTouchMoved(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Ev
 	{
 		return;
 	}
+	*/
 }
 
 void CLayerGameTouch::ccTouchEnded(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Event)
@@ -90,6 +93,7 @@ void CLayerGameTouch::ccTouchEnded(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Ev
 	cocos2d::CCPoint point;
 
 	point = getTouchPoint(Touch);
+	/*
 	if (false == g_SceneGame->m_layerDialog->touchEnded(point))
 	{
 		return;
@@ -98,6 +102,7 @@ void CLayerGameTouch::ccTouchEnded(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Ev
 	{
 		return;
 	}
+	*/
 }
 
 void CLayerGameTouch::ccTouchCancelled(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Event)

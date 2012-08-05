@@ -40,7 +40,7 @@ bool CLayerGameObject::initLayerGameObject()
 	if (cocos2d::CCLayer::init())
 	{
 		dialog = CSpriteDlgMissionStart::create();
-		g_SceneGame->m_layerDialog->runDialog(dialog);
+		//g_SceneGame->m_layerDialog->runDialog(dialog);
 
 		m_tank = CSpriteTank::create();
 		addChild(m_tank);

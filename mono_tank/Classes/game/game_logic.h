@@ -28,7 +28,7 @@ public:
 
 public:
 	int getScore()const { return m_nScore; }
-	State getSate()const { return m_eState; }
+	State getState()const { return m_eState; }
 	eMapValue getMapValue(int i,int j)const{ return m_nMap[i][j]; }
 
 private:

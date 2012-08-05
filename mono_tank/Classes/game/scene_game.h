@@ -21,20 +21,21 @@ public:
 	
 	virtual void onEnter();
 	virtual void onExit();
-	
+	virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+
 public:
 	static CSceneGame *create(const CGameLogic* pGameLogic);
 	bool initSceneGame(const CGameLogic* pGameLogic);
 
 private:
 	void refresh(float dt);
-	
+	void menuCallbackPause(cocos2d::CCObject* pSender);
+
 public:
 	CLayerGameMap *m_layerMap;
-	CLayerGameObject *m_layerObject;
-	CLayerDialog *m_layerDialog;
-	CLayerGameTouch *m_layerTouch;
-	CLayerGameControl *m_layerControl;
 
 	const CGameLogic *m_pGameLogic;
 	cocos2d::CCLabelTTF*	m_labelScore;

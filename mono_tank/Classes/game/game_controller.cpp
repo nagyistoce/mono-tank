@@ -76,6 +76,16 @@ void CGameController::dispatchEvent(eEvent event)
 			m_pLogic->start();
 		}
 		break;
+	case eEvent_Btn_PauseGame:
+		{
+			m_pLogic->setPause(true);
+		}
+		break;
+	case eEvent_Btn_ResumeGame:
+		{
+			m_pLogic->setPause(false);
+		}
+		break;
 	}
 	if(event>eEvent_Btn_begin && event<eEvent_Btn_end)
 	{
