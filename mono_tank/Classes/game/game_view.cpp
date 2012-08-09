@@ -54,12 +54,9 @@ void CGameView::onEnter()
 	static const int OffsetY = WINDOW_HEIGHT/GRID_HORIZON;
 	for(int i=0; i<GRID_VERTICAL*GRID_HORIZON; i++)
 	{
-		
 		m_Map[i] = CCSprite::spriteWithFile("Rect.png");
 		m_Map[i]->setPositionInPixels(ccp(i%GRID_VERTICAL*OffsetX,i/GRID_VERTICAL*OffsetY));
-		/*
-		m_Map[i] = CCLayerColor::layerWithColorWidthHeight(ccc4(0,0,0,255),OffsetX,OffsetY);
-		*/
+	
 		m_Map[i]->setColor(ccc3(0,0,0));
 		m_Map[i]->setAnchorPoint(ccp(0,1));
 		m_Map[i]->setPositionInPixels(ccp(i%GRID_VERTICAL*OffsetX,WINDOW_HEIGHT-i/GRID_VERTICAL*OffsetY));

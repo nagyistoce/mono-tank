@@ -3,6 +3,10 @@
 
 #include "game_define.h"
 
+
+class CObj_Tank;
+class CObj_Tank;
+
 class CGameLogic
 {
 public: 
@@ -37,6 +41,9 @@ private:
 	int m_nScore;
 	eMapValue m_nMap[GRID_VERTICAL][GRID_HORIZON];
 	int m_nTick;
+
+private:
+	CObj_Tank*	m_pTank;
 };
 
 #endif

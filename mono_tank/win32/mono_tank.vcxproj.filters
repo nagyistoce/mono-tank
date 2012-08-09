@@ -25,6 +25,9 @@
     <Filter Include="Classes\game\sprite">
       <UniqueIdentifier>{022fe674-158a-4e18-a7b8-27ba23fc7ee6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\game\obj">
+      <UniqueIdentifier>{d654fa7c-5069-4732-8e83-f2960a16b2a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -83,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\game\scene_menu.cpp">
       <Filter>Classes\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\obj_tank.cpp">
+      <Filter>Classes\game\obj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\game\scene_menu.h">
       <Filter>Classes\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\obj.h">
+      <Filter>Classes\game\obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\obj_tank.h">
+      <Filter>Classes\game\obj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

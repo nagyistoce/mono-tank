@@ -30,7 +30,6 @@ private:
 
 	const CGameLogic *m_pGameLogic;
 	cocos2d::CCSprite*		m_Map[GRID_VERTICAL*GRID_HORIZON];
-	//cocos2d::CCLayer*		m_Map[GRID_VERTICAL*GRID_HORIZON];
 	
 
 	cocos2d::CCLayer*		m_layerCurrent;

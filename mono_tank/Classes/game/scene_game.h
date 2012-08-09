@@ -11,6 +11,8 @@
 #include "game_define.h"
 
 class CGameLogic;
+
+
 class CSceneGame : public cocos2d::CCLayer
 {
 
@@ -34,11 +36,13 @@ private:
 	void refresh(float dt);
 	void menuCallbackPause(cocos2d::CCObject* pSender);
 
-public:
+private:
 	CLayerGameMap *m_layerMap;
 
 	const CGameLogic *m_pGameLogic;
 	cocos2d::CCLabelTTF*	m_labelScore;
+
+
 };
 
 #endif
