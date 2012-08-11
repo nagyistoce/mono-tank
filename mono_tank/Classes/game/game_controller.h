@@ -13,6 +13,9 @@ enum eEvent
 	eEvent_Btn_ResumeGame,
 	eEvent_Btn_end = 100,
 
+	eEvent_Control_Left = 200,
+	eEvent_Control_Right,
+
 	eEvent_Num
 };
 

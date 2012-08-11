@@ -10,11 +10,11 @@ CObj_Tank::~CObj_Tank()
 {
 }
 
-bool CObj_Tank::CheckCollision(int** Map, int w,int h)const
+bool CObj_Tank::CheckCollision(const CObj& obj)const
 {
 	if( m_Invincible )
 	{
 		return false;
 	}
-	return CObj::CheckCollision(Map,w,h);
+	return CObj::CheckCollision(obj);
 }

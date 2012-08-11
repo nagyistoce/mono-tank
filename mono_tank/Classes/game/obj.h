@@ -21,22 +21,31 @@ public:
 	virtual ~CObj(){}
 public:
 	virtual eObj_Type GetType() { return eObj_Invalid; }
-	virtual bool CheckCollision(int** Map, int w,int h)const
+	virtual bool CheckCollision(const CObj& obj)const
 	{
 		for(int i=0; i<GRID_OBJ_TILE; i++)
 		{
-			if(eMapValue_None!=m_byData[i])
+			if(eMapValue_None==m_byData[i])
 			{
-				int x = m_Pos.x+i/GRID_OBJ_SIDE;
-				int y = m_Pos.y+i%GRID_OBJ_SIDE;
-				if(x>=0 && x<w && y>=0 && y<h)
-				{
-					if(eMapValue_None!=Map[x][y])
-					{
-						return true;
-					}
-				}
+				continue;
 			}
+			int x1 = m_Pos.x+i/GRID_OBJ_SIDE;
+			int y1 = m_Pos.y+i%GRID_OBJ_SIDE;
+
+			for(int j=0; i<GRID_OBJ_TILE; j++)
+			{
+				if(eMapValue_None==obj.GetData(i))
+				{
+					continue;
+				}
+
+				int x2 = obj.GetPosition().x+j/GRID_OBJ_SIDE;
+				int y2 = obj.GetPosition().y+j%GRID_OBJ_SIDE;
+				if( x1==x2 && y1==y2 )
+				{
+					return true;
+				}
+			}		
 		}
 		return false;
 	}

@@ -15,7 +15,7 @@ CGameLogic::~CGameLogic()
 
 void CGameLogic::resetGame()
 {
-	m_nScore = 0;
+	m_nDistance = 0;
 	m_nTick = 0;
 
 	for(int i=0; i<GRID_VERTICAL; i++)
@@ -25,6 +25,7 @@ void CGameLogic::resetGame()
 			m_nMap[i][j] = eMapValue_None;
 		}
 	}
+	m_pTank->SetPosition(TANK_INIT_POS_X,TANK_INIT_POS_Y);
 }
 
 void CGameLogic::update(float dt)
@@ -61,11 +62,7 @@ void CGameLogic::update(float dt)
 		break;
 	}
 
-	m_nTick+=1;
-
-	if( 0==m_nTick%60 )
-	{
-		for(int i=0; i<GRID_VERTICAL; i++)
+	for(int i=0; i<GRID_VERTICAL; i++)
 		{
 			for(int j=0; j<GRID_HORIZON; j++)
 			{
@@ -98,8 +95,20 @@ void CGameLogic::update(float dt)
 			*/
 		}
 
-		m_nScore+=10;
-	}
+	if( 0==m_nTick%60 )
+	{
+		m_nDistance+=1;
 
-	
+
+	}	
+	m_nTick+=1;
+
+}
+void CGameLogic::Move(const MyPoint& pt)
+{
+	if( m_pTank )
+	{
+		MyPoint p(m_pTank->GetPosition());
+		m_pTank->SetPosition(p+pt);
+	}
 }
