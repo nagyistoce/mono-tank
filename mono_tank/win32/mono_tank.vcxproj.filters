@@ -90,6 +90,9 @@
     <ClCompile Include="..\Classes\game\obj_tank.cpp">
       <Filter>Classes\game\obj</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\game\obj_mananger.cpp">
+      <Filter>Classes\game\obj</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -165,6 +168,9 @@
       <Filter>Classes\game\obj</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\game\obj_tank.h">
+      <Filter>Classes\game\obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\obj_mananger.h">
       <Filter>Classes\game\obj</Filter>
     </ClInclude>
   </ItemGroup>
