@@ -118,10 +118,11 @@ void CSceneGame::onEnter()
 									this,
 									menu_selector(CSceneGame::menuCallbackPause) );
 	pBtnPause->setAnchorPoint(ccp(1,1));
+	pBtnPause->setPosition(ccp(WINDOW_WIDTH,WINDOW_HEIGHT));
 
 	CCMenu* pMenu = CCMenu::menuWithItems(pBtnPause, NULL);
-	pMenu->setAnchorPoint(ccp(1,1));
-	pMenu->setPosition( ccp(WINDOW_WIDTH,WINDOW_HEIGHT) );
+	pMenu->setAnchorPoint(ccp(0,0));
+	pMenu->setPosition( ccp(0,0) );
 	addChild(pMenu);
 
 
@@ -147,7 +148,7 @@ void CSceneGame::onExit()
 void CSceneGame::refresh(float dt)
 {
 	char szScore[64] = {0};
-	sprintf(szScore,"Score:%d",m_pGameLogic->getScore());
+	sprintf(szScore,"Score:%d",m_pGameLogic->getDistance());
 	m_labelScore->setString(szScore);
 	
 	CCLayer::update(dt);
@@ -159,13 +160,24 @@ void CSceneGame::menuCallbackPause(cocos2d::CCObject* pSender)
 }
 
 bool CSceneGame::ccTouchBegan(cocos2d::CCTouch *Touch, cocos2d::CCEvent *Event)
-{
-	cocos2d::CCPoint point;
-
-	//point = getTouchPoint(Touch);
+{		
 	if( CGameLogic::eState_Pause==m_pGameLogic->getState())
 	{
 		DISPATCH_EVENT(eEvent_Btn_ResumeGame);
+		return true;
+	}
+
+	cocos2d::CCPoint point;
+	point = convertTouchToNodeSpace(Touch);
+	if(point.x>=0 && point.x<WINDOW_WIDTH/2)
+	{
+		DISPATCH_EVENT(eEvent_Control_Left);
+		return true;
+	}
+	else
+	{
+		DISPATCH_EVENT(eEvent_Control_Right);
+		return true;
 	}
 
 	return true;

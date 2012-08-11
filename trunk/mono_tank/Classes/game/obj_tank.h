@@ -10,7 +10,7 @@ public:
 	virtual ~CObj_Tank();
 public:
 	virtual eObj_Type GetType() { return eObj_Tank; }
-	virtual bool CheckCollision(int** Map, int w,int h)const;
+	virtual bool CheckCollision(const CObj& obj)const;
 	
 	PRIVATE_PROPERTY(bool,Invincible);
 	PRIVATE_PROPERTY(bool,Live);

@@ -52,7 +52,16 @@ void CGameController::onEnter()
 	CCScene::onEnter();
 
 	schedule(schedule_selector(CGameController::loop));
-	m_pView->enterMenu();
+#ifdef _DEBUG
+	m_pView->enterPlay();
+	m_pLogic->start();
+	m_pView->refresh();
+#else
+	//m_pView->enterMenu();
+#endif
+
+	
+	
 }
 
 void CGameController::onExit()
@@ -74,6 +83,7 @@ void CGameController::dispatchEvent(eEvent event)
 		{
 			m_pView->enterPlay();
 			m_pLogic->start();
+			m_pView->refresh();
 		}
 		break;
 	case eEvent_Btn_PauseGame:
@@ -86,7 +96,18 @@ void CGameController::dispatchEvent(eEvent event)
 			m_pLogic->setPause(false);
 		}
 		break;
+	case eEvent_Control_Left:
+		{
+			m_pLogic->Move(MyPoint(-1,0));
+		}
+		break;
+	case eEvent_Control_Right:
+		{
+			m_pLogic->Move(MyPoint(1,0));
+		}
+		break;
 	}
+
 	if(event>eEvent_Btn_begin && event<eEvent_Btn_end)
 	{
 		//play a button sound

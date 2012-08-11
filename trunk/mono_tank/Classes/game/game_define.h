@@ -6,11 +6,14 @@ typedef unsigned char byte;
 #define WINDOW_WIDTH	320
 #define WINDOW_HEIGHT	480
 
-#define GRID_VERTICAL	12
+#define GRID_VERTICAL	13
 #define GRID_HORIZON	20
 
 #define GRID_OBJ_SIDE		5
 #define GRID_OBJ_TILE		(GRID_OBJ_SIDE*GRID_OBJ_SIDE)
+
+#define TANK_INIT_POS_X	(GRID_VERTICAL-GRID_OBJ_SIDE)/2
+#define TANK_INIT_POS_Y	(GRID_HORIZON-GRID_OBJ_SIDE-1)
 
 #define PRIVATE_PROPERTY(type,variblename)\
 public:\
