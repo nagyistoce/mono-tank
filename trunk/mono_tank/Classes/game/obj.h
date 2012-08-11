@@ -57,6 +57,7 @@ public:
 protected:
 	const byte* m_byData;
 	MyPoint m_Pos;
+	PRIVATE_PROPERTY(bool,Active)
 };
 
 
@@ -65,7 +66,7 @@ class CObj_Barrier : public CObj
 public:
 	CObj_Barrier()
 	{
-		m_byData = ARRAY_TANK;
+		m_byData = ARRAY_BARRIER;
 	}
 	~CObj_Barrier(){}
 	virtual eObj_Type GetType() { return eObj_Barrier; }

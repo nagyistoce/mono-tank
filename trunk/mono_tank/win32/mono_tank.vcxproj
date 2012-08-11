@@ -90,6 +90,7 @@
     <ClCompile Include="..\Classes\game\layer\layer_game_map.cpp" />
     <ClCompile Include="..\Classes\game\layer\layer_game_object.cpp" />
     <ClCompile Include="..\Classes\game\layer\layer_game_touch.cpp" />
+    <ClCompile Include="..\Classes\game\obj_mananger.cpp" />
     <ClCompile Include="..\Classes\game\obj_tank.cpp" />
     <ClCompile Include="..\Classes\game\scene_game.cpp" />
     <ClCompile Include="..\Classes\game\scene_menu.cpp" />
@@ -114,6 +115,7 @@
     <ClInclude Include="..\Classes\game\layer\layer_game_object.h" />
     <ClInclude Include="..\Classes\game\layer\layer_game_touch.h" />
     <ClInclude Include="..\Classes\game\obj.h" />
+    <ClInclude Include="..\Classes\game\obj_mananger.h" />
     <ClInclude Include="..\Classes\game\obj_tank.h" />
     <ClInclude Include="..\Classes\game\scene_game.h" />
     <ClInclude Include="..\Classes\game\scene_menu.h" />

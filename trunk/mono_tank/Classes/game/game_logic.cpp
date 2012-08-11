@@ -25,6 +25,7 @@ void CGameLogic::resetGame()
 			m_nMap[i][j] = eMapValue_None;
 		}
 	}
+	m_pTank->SetActive(true);
 	m_pTank->SetPosition(TANK_INIT_POS_X,TANK_INIT_POS_Y);
 }
 
@@ -63,37 +64,40 @@ void CGameLogic::update(float dt)
 	}
 
 	for(int i=0; i<GRID_VERTICAL; i++)
+	{
+		for(int j=0; j<GRID_HORIZON; j++)
 		{
-			for(int j=0; j<GRID_HORIZON; j++)
-			{
-				m_nMap[i][j] = eMapValue_None;
-			}
+			m_nMap[i][j] = eMapValue_None;
 		}
+	}
 	
-		if( eState_Playing==m_eState )
+	if( eState_Playing==m_eState )
+	{
+		for(int i=0; i<GRID_OBJ_TILE; i++)
 		{
-			for(int i=0; i<GRID_OBJ_TILE; i++)
+			eMapValue value = (eMapValue)m_pTank->GetData(i);
+			if( eMapValue_None==value )
 			{
-				eMapValue value = (eMapValue)m_pTank->GetData(i);
-				if( eMapValue_None==value )
-				{
-					continue;
-				}
-				int x = m_pTank->GetPosition().x+i%GRID_OBJ_SIDE;
-				int y = m_pTank->GetPosition().y+i/GRID_OBJ_SIDE;
-				if( x<0 || x>=GRID_VERTICAL || y<0 || y>=GRID_HORIZON )
-				{
-					continue;
-				}
-				m_nMap[x][y] = value;
+				continue;
 			}
-			/*
-			for(int i=0; i<10; i++)
+			int x = m_pTank->GetPosition().x+i%GRID_OBJ_SIDE;
+			int y = m_pTank->GetPosition().y+i/GRID_OBJ_SIDE;
+			if( x<0 || x>=GRID_VERTICAL || y<0 || y>=GRID_HORIZON )
 			{
-				m_nMap[rand()%GRID_VERTICAL][rand()%GRID_HORIZON] = eMapValue_Rect;
+				continue;
 			}
-			*/
+			m_nMap[x][y] = value;
 		}
+		m_nMap[0][0] = eMapValue_Rect;
+
+		m_nMap[GRID_VERTICAL-1][GRID_HORIZON-1] = eMapValue_Rect;
+		/*
+		for(int i=0; i<10; i++)
+		{
+			m_nMap[rand()%GRID_VERTICAL][rand()%GRID_HORIZON] = eMapValue_Rect;
+		}
+		*/
+	}
 
 	if( 0==m_nTick%60 )
 	{
