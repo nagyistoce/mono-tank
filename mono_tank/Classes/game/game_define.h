@@ -2,6 +2,9 @@
 #define game_define_h
 
 typedef unsigned char byte;
+typedef unsigned int  uint;
+
+#define SAFE_DELETE(p) if(p){ delete (p); p=0; }
 
 #define WINDOW_WIDTH	320
 #define WINDOW_HEIGHT	480
@@ -29,42 +32,70 @@ enum eMapValue
 
 	eMapValue_Num
 };
-
-	const byte ARRAY_NONE[GRID_OBJ_TILE] =
-	{
-		0,0,0,0,0,
-		0,0,0,0,0,
-		0,0,0,0,0,
-		0,0,0,0,0,
-		0,0,0,0,0
-	};
-
-	const byte ARRAY_TANK[GRID_OBJ_TILE] =
-	{
-		0,0,1,0,0,
-		0,1,1,1,0,
-		0,0,1,0,0,
-		0,1,1,1,0,
-		0,0,0,0,0
-	};
-
-	const byte ARRAY_BARRIER[GRID_OBJ_TILE] =
-	{
-		1,0,0,0,0,
-		1,0,0,0,0,
-		1,0,0,0,0,
-		0,0,0,0,0,
-		0,0,0,0,0
-	};
-
 enum eObj_Type
 {
-	eObj_Invalid = 0,
+	eObj_Invalid = -1,
+	eObj_Barrier_1,
+	eObj_Barrier_2,
+	eObj_Block_1,
+	eObj_Block_2,
+	eObj_Block_3,
+
 	eObj_Tank,
-	eObj_Barrier,
 
 	eObj_Num
 };
+const byte ARRAY[][GRID_OBJ_TILE] =
+{
+	{//Barrier_1
+		1,0,0,0,0,
+		1,0,0,0,0,
+		1,0,0,0,0,
+		0,0,0,1,0,
+		0,0,0,0,0
+	},
+
+	{//Barrier_2
+		1,0,0,0,0,
+		1,0,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0
+	},
+
+	{//Block_1
+		1,1,0,0,0,
+		1,1,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0
+	},
+
+	{//Block_2
+		1,1,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0
+	},
+
+	{//Block_3
+		1,1,1,0,0,
+		0,1,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0,
+		0,0,0,0,0
+	},
+
+	{//tank
+		0,0,1,0,0,
+		0,1,1,1,0,
+		0,0,1,0,0,
+		0,1,1,1,0,
+		0,0,0,0,0
+	},
+};
+
 
 struct MyPoint
 {

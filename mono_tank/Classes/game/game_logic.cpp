@@ -18,6 +18,18 @@ void CGameLogic::resetGame()
 	m_nDistance = 0;
 	m_nTick = 0;
 
+	m_ObjMgr.reset();
+	for(int i=0; i<GRID_HORIZON; i++)
+	{
+		m_ObjMgr.update();
+	}
+
+	m_pTank->SetActive(true);
+	m_pTank->SetPosition(TANK_INIT_POS_X,TANK_INIT_POS_Y);
+
+}
+void CGameLogic::clearMap()
+{
 	for(int i=0; i<GRID_VERTICAL; i++)
 	{
 		for(int j=0; j<GRID_HORIZON; j++)
@@ -25,10 +37,7 @@ void CGameLogic::resetGame()
 			m_nMap[i][j] = eMapValue_None;
 		}
 	}
-	m_pTank->SetActive(true);
-	m_pTank->SetPosition(TANK_INIT_POS_X,TANK_INIT_POS_Y);
 }
-
 void CGameLogic::update(float dt)
 {
 	switch(m_eState)
@@ -63,16 +72,54 @@ void CGameLogic::update(float dt)
 		break;
 	}
 
-	for(int i=0; i<GRID_VERTICAL; i++)
-	{
-		for(int j=0; j<GRID_HORIZON; j++)
-		{
-			m_nMap[i][j] = eMapValue_None;
-		}
-	}
+	clearMap();
 	
 	if( eState_Playing==m_eState )
 	{
+		if( 0==m_nTick%60 )
+		{
+			m_ObjMgr.update();
+			m_nDistance+=1;
+
+			for(int i=0; i<m_ObjMgr.GetObjCount(); i++)
+			{
+				const CObj* pObj = m_ObjMgr.GetObj(i);
+				if( m_pTank->CheckCollision(*pObj) )
+				{
+					m_ObjMgr.GetObj(i)->SetActive(false);
+				}
+			}
+		}
+		for(int i=0; i<m_ObjMgr.GetObjCount(); i++)
+		{
+			const CObj* pObj = m_ObjMgr.GetObj(i);
+			if( !pObj->GetActive() )
+			{
+				continue;
+			}
+			if( m_pTank->CheckCollision(*pObj) )
+			{
+				m_ObjMgr.GetObj(i)->SetActive(false);
+
+			}
+
+			for(int i=0; i<GRID_OBJ_TILE; i++)
+			{
+				eMapValue value = (eMapValue)pObj->GetData(i);
+				if( eMapValue_None==value )
+				{
+					continue;
+				}
+				int x = pObj->GetPosition().x+i%GRID_OBJ_SIDE;
+				int y = pObj->GetPosition().y+i/GRID_OBJ_SIDE;
+				if( x<0 || x>=GRID_VERTICAL || y<0 || y>=GRID_HORIZON )
+				{
+					continue;
+				}
+				m_nMap[x][y] = value;
+			}
+		}
+
 		for(int i=0; i<GRID_OBJ_TILE; i++)
 		{
 			eMapValue value = (eMapValue)m_pTank->GetData(i);
@@ -88,23 +135,11 @@ void CGameLogic::update(float dt)
 			}
 			m_nMap[x][y] = value;
 		}
-		m_nMap[0][0] = eMapValue_Rect;
 
-		m_nMap[GRID_VERTICAL-1][GRID_HORIZON-1] = eMapValue_Rect;
-		/*
-		for(int i=0; i<10; i++)
-		{
-			m_nMap[rand()%GRID_VERTICAL][rand()%GRID_HORIZON] = eMapValue_Rect;
-		}
-		*/
+
 	}
 
-	if( 0==m_nTick%60 )
-	{
-		m_nDistance+=1;
-
-
-	}	
+	
 	m_nTick+=1;
 
 }

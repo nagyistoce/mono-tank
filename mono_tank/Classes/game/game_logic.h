@@ -2,10 +2,11 @@
 #define game_logic_h
 
 #include "game_define.h"
+#include "obj_mananger.h"
 
 
 class CObj_Tank;
-class CObj_Tank;
+class CObjMananger;
 
 class CGameLogic
 {
@@ -37,9 +38,10 @@ public:
 	int getDistance()const { return m_nDistance; }
 	State getState()const { return m_eState; }
 	eMapValue getMapValue(int i,int j)const{ return m_nMap[i][j]; }
-
 private:
-
+	void clearMap();
+private:
+	
 	State m_eState;
 	int m_nDistance;
 	eMapValue m_nMap[GRID_VERTICAL][GRID_HORIZON];
@@ -47,6 +49,7 @@ private:
 
 private:
 	CObj_Tank*	m_pTank;
+	CObjMananger m_ObjMgr;
 };
 
 #endif
